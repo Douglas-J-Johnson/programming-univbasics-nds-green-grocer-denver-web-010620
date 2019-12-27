@@ -97,8 +97,6 @@ def apply_coupons(cart, coupons)
   applied_item_in_cart_quantity = 0
 
   if coupons then
-    pp coupon_cart
-
     for i in 0...coupons
       coupon = coupons[i]
       coupon_item_name = coupon[:item]
