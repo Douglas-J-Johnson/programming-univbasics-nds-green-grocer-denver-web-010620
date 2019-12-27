@@ -77,7 +77,7 @@ end
 def apply_coupons(cart, coupons)
   pp coupons
   pp cart
-  coupon_cart = nil
+  coupon_cart = cart
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
@@ -97,8 +97,7 @@ def apply_coupons(cart, coupons)
   applied_item_in_cart_quantity = 0
 
   if coupons then
-    coupon_cart = consolidate_cart(cart)
-    pp coupon_cart
+    #pp coupon_cart
 
     for i in 0...coupons
       coupon = coupons[i]
@@ -156,7 +155,7 @@ def apply_clearance(cart)
   cart_item = {}
 
   if clearance_cart then
-    clearance_cart = consolidate_cart(cart)
+    clearance_cart = cart
 
     for i in 0...clearance_cart.length
       cart_item = clearance_cart[i]
