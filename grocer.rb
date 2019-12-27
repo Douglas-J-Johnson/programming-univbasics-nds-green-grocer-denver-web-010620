@@ -96,8 +96,7 @@ def apply_coupons(cart, coupons)
   applied_item_in_cart_index = 0
   applied_item_in_cart_quantity = 0
 
-  if coupons then
-      pp coupon_cart
+  if coupons then      
     for i in 0...coupons
       coupon = coupons[i]
       coupon_item_name = coupon[:item]
@@ -114,7 +113,7 @@ def apply_coupons(cart, coupons)
         while item_in_cart_quantity >= coupon_quantity
           item_in_cart_quantity = item_in_cart_quantity - coupon_quantity
           item_in_cart[:count] = item_in_cart_quantity
-          #coupon_cart[item_in_cart_index] = item_in_cart
+          coupon_cart[item_in_cart_index] = item_in_cart
 
           applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
           if applied_item_in_cart then
@@ -123,7 +122,7 @@ def apply_coupons(cart, coupons)
 
             applied_item_in_cart_quantity = applied_item_in_cart_quantity + 2
             applied_item_in_cart[:count] = applied_item_in_cart_quantity
-            #coupon_cart[applied_item_in_cart_index] = applied_item_in_cart
+            coupon_cart[applied_item_in_cart_index] = applied_item_in_cart
           else
             coupon_cart.push({
               :item => coupon_applied_item_name,
@@ -139,6 +138,7 @@ def apply_coupons(cart, coupons)
         end
       end
     end
+    pp coupon_cart
   end
 
   #coupon_cart = remove_quantity_zero_items (coupon_cart)
