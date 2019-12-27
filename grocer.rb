@@ -77,23 +77,21 @@ end
 def apply_coupons(cart, coupons)
   pp coupons
   pp cart
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
-  #coupon = {}
-  #coupon_item_name = ""
-  #coupon_applied_text = " W/COUPON"
-  #coupon_applied_item_name = ""
-  #coupon_quantity = 0
-  #coupon_cost_per_item = 0.0
 
-  #item_in_cart = {}
-  #item_in_cart_index = 0
-  #item_in_cart_quantity = 0
+  coupon = {}
+  coupon_item_name = ""
+  coupon_applied_text = " W/COUPON"
+  coupon_applied_item_name = ""
+  coupon_quantity = 0
+  coupon_cost_per_item = 0.0
 
-  #applied_item_in_cart = {}
-  #applied_item_in_cart_index = 0
-  #applied_item_in_cart_quantity = 0
+  item_in_cart = {}
+  item_in_cart_index = 0
+  item_in_cart_quantity = 0
+
+  applied_item_in_cart = {}
+  applied_item_in_cart_index = 0
+  applied_item_in_cart_quantity = 0
 
   #if coupons then
   #  for i in 0...coupons.length
