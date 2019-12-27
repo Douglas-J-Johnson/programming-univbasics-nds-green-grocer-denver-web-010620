@@ -113,25 +113,25 @@ def apply_coupons(cart, coupons)
           cart[item_in_cart_index] = item_in_cart
 
           applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, cart)
-  #        if applied_item_in_cart then
-  #          applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, cart)
-  #          applied_item_in_cart_quantity = applied_item_in_cart[:count]
+          if applied_item_in_cart then
+            applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, cart)
+            applied_item_in_cart_quantity = applied_item_in_cart[:count]
 
-  #          applied_item_in_cart_quantity = applied_item_in_cart_quantity + 2
-  #          applied_item_in_cart[:count] = applied_item_in_cart_quantity
-  #          cart[applied_item_in_cart_index] = applied_item_in_cart
-  #        else
-  #          cart.push({
-  #            :item => coupon_applied_item_name,
-  #            :price => coupon_cost_per_item,
-  #            :clearance => item_in_cart[:clearance],
-  #            :count => coupon_quantity
-  #            })
-  #        end
+            applied_item_in_cart_quantity = applied_item_in_cart_quantity + 2
+            applied_item_in_cart[:count] = applied_item_in_cart_quantity
+            cart[applied_item_in_cart_index] = applied_item_in_cart
+          else
+            cart.push({
+              :item => coupon_applied_item_name,
+              :price => coupon_cost_per_item,
+              :clearance => item_in_cart[:clearance],
+              :count => coupon_quantity
+              })
+          end
 
   #        item_in_cart = find_index_by_name_in_collection(coupon_item_name, cart)
-          item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
-          item_in_cart_quantity = item_in_cart[:count]
+  #        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
+  #        item_in_cart_quantity = item_in_cart[:count]
         end
       end
     end
