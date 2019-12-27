@@ -1,3 +1,5 @@
+require 'pp'
+
 def find_item_by_name_in_collection(name, collection)
   #Returns element for only the first occurence of name in collection
   if collection then
