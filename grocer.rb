@@ -75,6 +75,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  pp cart
   coupon_cart = nil
   # Consult README for inputs and outputs
   #
@@ -141,6 +142,7 @@ def apply_coupons(cart, coupons)
   end
 
   coupon_cart = remove_quantity_zero_items (coupon_cart)
+  pp coupon_cart
   return coupon_cart
 end
 
