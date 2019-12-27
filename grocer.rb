@@ -137,9 +137,9 @@ def apply_coupons(cart, coupons)
         end
       end
     end
-    pp cart
   end
 
+  pp cart
   #cart = remove_quantity_zero_items (cart)
   return cart
 end
