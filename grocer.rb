@@ -107,8 +107,8 @@ def apply_coupons(cart, coupons)
         item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
         item_in_cart_quantity = item_in_cart[:count]
 
-  #      while item_in_cart_quantity >= coupon_quantity
-  #        item_in_cart_quantity = item_in_cart_quantity - coupon_quantity
+        while item_in_cart_quantity >= coupon_quantity
+          item_in_cart_quantity = item_in_cart_quantity - coupon_quantity
   #        item_in_cart[:count] = item_in_cart_quantity
   #        cart[item_in_cart_index] = item_in_cart
 
@@ -132,7 +132,7 @@ def apply_coupons(cart, coupons)
   #        item_in_cart = find_index_by_name_in_collection(coupon_item_name, cart)
   #        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
   #        item_in_cart_quantity = item_in_cart[:count]
-  #      end
+        end
       end
     end
   end
