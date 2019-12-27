@@ -77,7 +77,6 @@ end
 def apply_coupons(cart, coupons)
   pp coupons
   pp cart
-  coupon_cart = cart
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
@@ -104,27 +103,27 @@ def apply_coupons(cart, coupons)
       coupon_quantity = coupon[:num]
       coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
 
-      item_in_cart = find_item_by_name_in_collection(coupon_item_name, coupon_cart)
+      item_in_cart = find_item_by_name_in_collection(coupon_item_name, cart)
 
       if item_in_cart then
-        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
+        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
         item_in_cart_quantity = item_in_cart[:count]
 
         while item_in_cart_quantity >= coupon_quantity
           item_in_cart_quantity = item_in_cart_quantity - coupon_quantity
           item_in_cart[:count] = item_in_cart_quantity
-          coupon_cart[item_in_cart_index] = item_in_cart
+          cart[item_in_cart_index] = item_in_cart
 
-          applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+          applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, cart)
           if applied_item_in_cart then
-            applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+            applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, cart)
             applied_item_in_cart_quantity = applied_item_in_cart[:count]
 
             applied_item_in_cart_quantity = applied_item_in_cart_quantity + 2
             applied_item_in_cart[:count] = applied_item_in_cart_quantity
-            coupon_cart[applied_item_in_cart_index] = applied_item_in_cart
+            cart[applied_item_in_cart_index] = applied_item_in_cart
           else
-            coupon_cart.push({
+            cart.push({
               :item => coupon_applied_item_name,
               :price => coupon_cost_per_item,
               :clearance => item_in_cart[:clearance],
@@ -132,17 +131,17 @@ def apply_coupons(cart, coupons)
               })
           end
 
-          item_in_cart = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
-          item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
+          item_in_cart = find_index_by_name_in_collection(coupon_item_name, cart)
+          item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
           item_in_cart_quantity = item_in_cart[:count]
         end
       end
     end
-    pp coupon_cart
+    pp cart
   end
 
-  #coupon_cart = remove_quantity_zero_items (coupon_cart)
-  return coupon_cart
+  #cart = remove_quantity_zero_items (cart)
+  return cart
 end
 
 def apply_clearance(cart)
