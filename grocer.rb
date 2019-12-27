@@ -122,9 +122,15 @@ def apply_coupons(cart, coupons)
             applied_item_in_cart[:count] = applied_item_in_cart_quantity
             coupon_cart[applied_item_in_cart_index] = applied_item_in_cart
           else
-
+            coupon_cart.push({
+              :item => coupon_applied_item_name,
+              :price => coupon_cost_per_item,
+              :clearance => item_in_cart[:clearance],
+              :count => coupon_quantity  
+              })
           end
 
+          item_in_cart = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
           item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
           item_in_cart_quantity = item_in_cart[:count]
         end
