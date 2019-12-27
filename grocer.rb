@@ -126,7 +126,7 @@ def apply_coupons(cart, coupons)
               :item => coupon_applied_item_name,
               :price => coupon_cost_per_item,
               :clearance => item_in_cart[:clearance],
-              :count => coupon_quantity  
+              :count => coupon_quantity
               })
           end
 
