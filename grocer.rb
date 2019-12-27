@@ -79,6 +79,8 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupon = {}
   coupon_item_name = ""
+  coupon_applied_text = " W/COUPON"
+  coupon_applied_item_name = ""
   coupon_quantity = 0
   coupon_cost_per_item = 0.0
 
@@ -96,13 +98,14 @@ def apply_coupons(cart, coupons)
     for i in 0...coupons
       coupon = coupons[i]
       coupon_item_name = coupon[:item]
+      coupon_applied_item_name = coupon_item_name + coupon_applied_text
       coupon_quantity = coupon[:num]
       coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
 
-
-
       coupon_item_in_cart = find_item_by_name_in_collection(coupon_item_name, coupon_cart)
       coupon_item_in_cart = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
+      coupon_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+      coupon_item_in_cart = find_index_by_name_in_collection(coupon_applied_item_name, coupon_cart)
     end
   end
 
