@@ -130,8 +130,8 @@ def apply_coupons(cart, coupons)
   #        end
 
   #        item_in_cart = find_index_by_name_in_collection(coupon_item_name, cart)
-  #        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
-  #        item_in_cart_quantity = item_in_cart[:count]
+          item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
+          item_in_cart_quantity = item_in_cart[:count]
         end
       end
     end
