@@ -101,7 +101,7 @@ def apply_coupons(cart, coupons)
       coupon_quantity = coupon[:num]
       coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
 
-  #    item_in_cart = find_item_by_name_in_collection(coupon_item_name, cart)
+      item_in_cart = find_item_by_name_in_collection(coupon_item_name, cart)
 
   #    if item_in_cart then
   #      item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, cart)
