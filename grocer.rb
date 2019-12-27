@@ -95,11 +95,11 @@ def apply_coupons(cart, coupons)
 
   if coupons then
     for i in 0...coupons.length
-  #    coupon = coupons[i]
-  #    coupon_item_name = coupon[:item]
-  #    coupon_applied_item_name = coupon_item_name + coupon_applied_text
-  #    coupon_quantity = coupon[:num]
-  #    coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
+      coupon = coupons[i]
+      coupon_item_name = coupon[:item]
+      coupon_applied_item_name = coupon_item_name + coupon_applied_text
+      coupon_quantity = coupon[:num]
+      coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
 
   #    item_in_cart = find_item_by_name_in_collection(coupon_item_name, cart)
 
