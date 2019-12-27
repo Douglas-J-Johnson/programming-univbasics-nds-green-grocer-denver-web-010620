@@ -116,7 +116,12 @@ def apply_coupons(cart, coupons)
           if applied_item_in_cart then
             applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, coupon_cart)
             applied_item_in_cart_quantity = applied_item_in_cart[:count]
+
+            applied_item_in_cart_quantity = applied_item_in_cart_quantity + 2
+            applied_item_in_cart[:count] = applied_item_in_cart_quantity
+            coupon_cart[applied_item_in_cart_index] = applied_item_in_cart
           else
+
           end
 
           item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
