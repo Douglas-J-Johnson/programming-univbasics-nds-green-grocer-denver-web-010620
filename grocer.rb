@@ -101,7 +101,7 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  clearance_cart = {}
+  clearance_cart = nil
   cart_item = {}
 
   if clearance_cart then
