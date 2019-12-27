@@ -111,6 +111,7 @@ def apply_coupons(cart, coupons)
         while item_in_cart_quantity >= coupon_quantity
           item_in_cart_quantity = item_in_cart_quantity - coupon_quantity
           item_in_cart[:count] = item_in_cart_quantity
+          coupon_cart[item_in_cart_index] = item_in_cart
 
           applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
           if applied_item_in_cart then
