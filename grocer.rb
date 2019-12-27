@@ -84,13 +84,13 @@ def apply_coupons(cart, coupons)
   coupon_quantity = 0
   coupon_cost_per_item = 0.0
 
-  coupon_item_in_cart = {}
-  coupon_item_in_cart_index = 0
-  coupon_item_in_cart_quantity = 0
+  item_in_cart = {}
+  item_in_cart_index = 0
+  item_in_cart_quantity = 0
 
-  coupon_applied_item = {}
-  coupon_applied_item_index = 0
-  coupon_applied_item_quantity = 0
+  applied_item_in_cart = {}
+  applied_item_in_cart_index = 0
+  applied_item_in_cart_quantity = 0
 
   if coupons then
     coupon_cart = consolidate_cart(cart)
@@ -102,13 +102,24 @@ def apply_coupons(cart, coupons)
       coupon_quantity = coupon[:num]
       coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
 
-      coupon_item_in_cart = find_item_by_name_in_collection(coupon_item_name, coupon_cart)
-      coupon_item_in_cart = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
-      coupon_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
-      coupon_item_in_cart = find_index_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+      item_in_cart = find_item_by_name_in_collection(coupon_item_name, coupon_cart)
+
+      if item_in_cart then
+        item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
+        item_in_cart_quantity = item_in_cart[:count]
+
+        while item_in_cart_quantity >= coupon_quantity
+          applied_item_in_cart = find_item_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+          applied_item_in_cart_index = find_index_by_name_in_collection(coupon_applied_item_name, coupon_cart)
+
+          item_in_cart_index = find_index_by_name_in_collection(coupon_item_name, coupon_cart)
+          item_in_cart_quantity = item_in_cart[:count]
+        end
+      end
     end
   end
 
+  coupon_cart = remove_quantity_zero_items (coupon_cart)
   return coupon_cart
 end
 
