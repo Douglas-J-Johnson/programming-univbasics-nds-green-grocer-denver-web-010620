@@ -146,22 +146,21 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  clearance_cart = nil
   cart_item = {}
 
-  if clearance_cart then
-    clearance_cart = cart
+  if cart then
+    cart
 
-    for i in 0...clearance_cart.length
-      cart_item = clearance_cart[i]
+    for i in 0...cart.length
+      cart_item = cart[i]
       if cart_item[:clearance] then
         cart_item[:price] = (cart_item[:price] * 0.8).round(2)
-        clearance_cart[i] = cart_item
+        cart[i] = cart_item
       end
     end
   end
 
-  return clearance_cart
+  return cart
 end
 
 def checkout(cart, coupons)
