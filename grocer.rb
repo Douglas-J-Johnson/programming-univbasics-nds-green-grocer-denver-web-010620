@@ -90,8 +90,15 @@ def apply_coupons(cart, coupons)
   coupon_applied_item_index = 0
   coupon_applied_item_quantity = 0
 
-  if coupon then
+  if coupons then
     coupon_cart = consolidate_cart(cart)
+
+    for i in 0...coupons
+      coupon = coupons[i]
+      coupon_item_name = coupon[:item]
+      coupon_quantity = coupon[:num]
+      coupon_cost_per_item = (coupon[:cost] / coupon_quantity).round(2)
+    end
   end
 
   return coupon_cart
