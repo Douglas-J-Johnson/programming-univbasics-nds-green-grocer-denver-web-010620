@@ -98,6 +98,7 @@ def apply_coupons(cart, coupons)
 
   if coupons then
     coupon_cart = consolidate_cart(cart)
+    pp coupon_cart
 
     for i in 0...coupons
       coupon = coupons[i]
