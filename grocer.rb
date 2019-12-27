@@ -75,8 +75,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  pp coupons
-  pp cart
+  #pp coupons
+  #pp cart
 
   coupon = {}
   coupon_item_name = ""
@@ -138,7 +138,7 @@ def apply_coupons(cart, coupons)
   end
 
   #cart = remove_quantity_zero_items (cart)
-  pp cart
+  #pp cart
   return cart
 end
 
