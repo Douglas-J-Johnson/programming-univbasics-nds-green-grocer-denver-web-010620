@@ -93,7 +93,7 @@ def apply_coupons(cart, coupons)
   applied_item_in_cart_index = 0
   applied_item_in_cart_quantity = 0
 
-  #if coupons then
+  if coupons then
   #  for i in 0...coupons.length
   #    coupon = coupons[i]
   #    coupon_item_name = coupon[:item]
@@ -135,7 +135,7 @@ def apply_coupons(cart, coupons)
   #      end
   #    end
   #  end
-  #end
+  end
 
   pp cart
   #cart = remove_quantity_zero_items (cart)
