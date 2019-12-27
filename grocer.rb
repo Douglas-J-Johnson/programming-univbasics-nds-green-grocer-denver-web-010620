@@ -97,7 +97,7 @@ def apply_coupons(cart, coupons)
   applied_item_in_cart_quantity = 0
 
   if coupons then
-    #pp coupon_cart
+    pp coupon_cart
 
     for i in 0...coupons
       coupon = coupons[i]
