@@ -75,6 +75,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  pp coupons
   pp cart
   coupon_cart = nil
   # Consult README for inputs and outputs
